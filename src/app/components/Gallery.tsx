@@ -102,25 +102,23 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="md:col-span-2 group">
               <div className="relative overflow-hidden rounded-xl aspect-video bg-gray-900">
-                <Image
-                  src="/placeholder.svg?height=400&width=800&text=Campus Tour"
-                  alt="Campus Tour"
-                  fill
-                  className="object-cover opacity-90 group-hover:opacity-70 transition-opacity duration-300"
-                />
-                <div className="absolute inset-0 flex flex-col justify-end p-6 bg-gradient-to-t from-black/80 to-transparent">
+                {/* Featured YouTube Video Embed */}
+                <iframe
+                  className="absolute inset-0 w-full h-full"
+                  src="https://www.youtube.com/embed/aOg6ReoC4rY"
+                  title="KJEI Trinity College Campus Tour"
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                ></iframe>
+                
+                <div className="absolute inset-0 flex flex-col justify-end p-6 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
                   <Badge className="w-fit mb-2 bg-primary hover:bg-primary">Featured</Badge>
-                  <h3 className="text-xl font-bold text-white mb-2">Campus Tour 2023</h3>
+                  <h3 className="text-xl font-bold text-white mb-2">KJEI Trinity Campus Tour</h3>
                   <p className="text-white/80 mb-4 max-w-lg">
                     Experience the beautiful campus of Trinity College with our comprehensive
                     virtual tour showcasing our state-of-the-art facilities.
                   </p>
-                  <div className="flex items-center">
-                    <div className="flex items-center justify-center rounded-full bg-primary w-12 h-12 text-white group-hover:bg-white group-hover:text-primary transition-colors duration-300">
-                      <Play className="h-5 w-5" />
-                    </div>
-                    <span className="ml-3 text-white text-sm">Watch video • 5:42</span>
-                  </div>
                 </div>
               </div>
             </div>
@@ -128,19 +126,22 @@ export default function Home() {
             <div className="space-y-6">
               {[
                 {
-                  title: 'Annual Day Celebration',
-                  duration: '3:18',
-                  desc: 'Highlights from our grand annual day celebration',
+                  id: 'lSGPTI-eISQ',
+                  title: 'Engineering Life at Trinity',
+                  duration: '6:42',
+                  desc: 'Students share their experience studying at Trinity College',
                 },
                 {
-                  title: 'Tech Fest 2023',
-                  duration: '4:05',
-                  desc: 'Student innovations at our annual tech festival',
+                  id: 'd-ZRarc1o2w',
+                  title: 'Annual Tech Fest 2023',
+                  duration: '5:18',
+                  desc: 'Highlights from our annual technology exhibition and competitions',
                 },
                 {
-                  title: 'Convocation Ceremony',
-                  duration: '6:22',
-                  desc: "Celebrating our graduates' achievements",
+                  id: 'GBGacraoVis',
+                  title: 'Graduation Ceremony 2023',
+                  duration: '7:35',
+                  desc: 'Celebrating our graduating class of 2023',
                 },
               ].map((video, index) => (
                 <div
@@ -150,14 +151,19 @@ export default function Home() {
                   <div className="flex">
                     <div className="relative w-24 h-24 sm:w-32 sm:h-32 flex-shrink-0">
                       <Image
-                        src={`/placeholder.svg?height=150&width=150&text=${video.title.split(' ')[0]}`}
+                        src={`https://img.youtube.com/vi/${video.id}/mqdefault.jpg`}
                         alt={video.title}
                         fill
                         className="object-cover"
                       />
-                      <div className="absolute inset-0 bg-black/30 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                      <a 
+                        href={`https://www.youtube.com/watch?v=${video.id}`} 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="absolute inset-0 bg-black/30 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                      >
                         <Play className="h-8 w-8 text-white" />
-                      </div>
+                      </a>
                     </div>
                     <div className="p-4 flex-1">
                       <h3 className="font-medium text-gray-900 group-hover:text-primary transition-colors duration-300">
@@ -172,10 +178,12 @@ export default function Home() {
                 </div>
               ))}
               <Link
-                href="#"
+                href="https://www.youtube.com/channel/UCpmcOqIPFuXjx_nMRJlqZCQ"
+                target="_blank" 
+                rel="noopener noreferrer"
                 className="inline-flex items-center text-sm font-medium text-primary hover:underline mt-4"
               >
-                View all videos
+                View our YouTube channel
                 <ArrowRight className="ml-1 h-4 w-4" />
               </Link>
             </div>
@@ -192,40 +200,58 @@ export default function Home() {
             Distinguished Guests & Visitors
           </h2>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
               {
                 name: 'Dr. Anil Kakodkar',
                 role: 'Former Chairman, Atomic Energy Commission',
                 date: 'Visited: March 2023',
                 topic: 'Future of Nuclear Energy in India',
+                image: 'https://www.kjei.edu.in/tcoer/GuestsCelebritiesVisited/1.JPG',
               },
               {
                 name: 'Dr. Vijay Bhatkar',
                 role: 'Computer Scientist, PARAM Supercomputer architect',
                 date: 'Visited: November 2022',
                 topic: 'AI and the Future of Computing',
+                image: 'https://www.kjei.edu.in/tcoer/GuestsCelebritiesVisited/2.JPG',
               },
               {
                 name: 'Dr. Raghunath Mashelkar',
                 role: 'Former Director General, CSIR',
                 date: 'Visited: February 2023',
                 topic: 'Innovation in Engineering Education',
+                image: 'https://www.kjei.edu.in/tcoer/GuestsCelebritiesVisited/3.JPG',
               },
               {
                 name: 'Dr. Nitin Karmalkar',
                 role: 'Former Vice-Chancellor, SPPU',
                 date: 'Visited: September 2022',
                 topic: 'Academic Excellence in Higher Education',
+                image: 'https://www.kjei.edu.in/tcoer/GuestsCelebritiesVisited/4.JPG',
+              },
+              {
+                name: 'Industry Expert Visit',
+                role: 'Technology Industry Leader',
+                date: 'Visited: July 2023',
+                topic: 'Industry-Academia Collaboration',
+                image: 'https://www.kjei.edu.in/tcoer/GuestsCelebritiesVisited/5.JPG',
+              },
+              {
+                name: 'Prof. Deepak Phatak',
+                role: 'IIT Mumbai Professor',
+                date: 'Visited: August 2022',
+                topic: 'Digital Transformation in Education',
+                image: 'https://www.kjei.edu.in/tcoer/GuestsCelebritiesVisited/6.JPG',
               },
             ].map((guest, index) => (
               <div
                 key={index}
-                className="group relative overflow-hidden rounded-xl bg-white border border-gray-100 hover:border-primary/20 transition-all duration-300"
+                className="group relative overflow-hidden rounded-xl bg-white border border-gray-100 hover:shadow-lg hover:border-primary/20 transition-all duration-300"
               >
                 <div className="aspect-video relative">
                   <Image
-                    src={`/placeholder.svg?height=300&width=500&text=${guest.name.split(' ')[1]}`}
+                    src={guest.image}
                     alt={guest.name}
                     fill
                     className="object-cover"
@@ -235,7 +261,7 @@ export default function Home() {
                       <p className="text-sm font-medium">{guest.topic}</p>
                       <div className="mt-2 flex items-center text-xs">
                         <ExternalLink className="h-3 w-3 mr-1" />
-                        <span>View lecture</span>
+                        <span>View event details</span>
                       </div>
                     </div>
                   </div>
@@ -253,7 +279,9 @@ export default function Home() {
 
           <div className="mt-8">
             <Link
-              href="#"
+              href="https://www.kjei.edu.in/tcoer/Gallery.php"
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center text-sm font-medium text-primary hover:underline"
             >
               View all distinguished guests

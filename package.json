@@ -30,6 +30,7 @@
     "framer-motion": "^12.6.2",
     "graphql": "^16.8.1",
     "lucide-react": "^0.483.0",
+    "motion": "^12.7.3",
     "next": "15.2.2",
     "payload": "latest",
     "postcss": "^8.5.3",
