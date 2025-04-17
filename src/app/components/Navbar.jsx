@@ -1,5 +1,6 @@
 "use client";
 import React, { useState } from "react";
+import Link from "next/link";
 
 const Navbar = () => {
   const [showSidebar, setShowSidebar] = useState(false);
@@ -9,17 +10,18 @@ const Navbar = () => {
       <div className="container mx-auto flex items-center justify-between h-24 border-b border-gray-200 px-6">
         {/* Logo Section (Left-Aligned) */}
         <div className="flex items-center">
-          <a href="#" className="flex items-center py-4 space-x-2 font-extrabold text-gray-900">
+          <Link href="/" className="flex items-center py-4 space-x-2 font-extrabold text-gray-900">
             <img src="https://www.kjei.edu.in/tcoer/images/logo.png" alt="logo" width={60} />
-          </a>
+          </Link>
         </div>
 
         {/* Navbar Links (Centered) */}
         <div className="hidden md:flex space-x-24 absolute left-1/2 transform -translate-x-1/2">
-          <a href="#" className="py-2 text-red-500 hover:text-red-500">Admission</a>
-          <a href="#" className="py-2 text-gray-700 hover:text-red-500">Training & Placement</a>
-          <a href="#" className="py-2 text-gray-700 hover:text-red-500">Approvals</a>
-          <a href="#" className="py-2 text-gray-700 hover:text-red-500">Gallery</a>
+          <Link href="/Admission" className="py-2 text-gray-700 hover:text-red-500">Admission</Link>
+          <Link href="/Schlorship" className="py-2 text-gray-700 hover:text-red-500">Scholarship</Link>
+          <Link href="/Gallery" className="py-2 text-gray-700 hover:text-red-500">Gallery</Link>
+          <Link href="/Library" className="py-2 text-gray-700 hover:text-red-500">Library</Link>
+          <Link href="/Contact" className="py-2 text-gray-700 hover:text-red-500">Contact</Link>
         </div>
 
         {/* Menu Button (Right-Aligned with Sidebar Trigger) */}
@@ -45,7 +47,7 @@ const Navbar = () => {
 
       {/* Sidebar Menu */}
       <div
-        className={`fixed top-0 right-0 h-full w-64 bg-white shadow-lg transform transition-transform duration-300 z-50 ${
+        className={`fixed top-0 right-0 h-full w-72 bg-white shadow-lg transform transition-transform duration-300 z-50 overflow-y-auto ${
           showSidebar ? "translate-x-0" : "translate-x-full"
         }`}
       >
@@ -61,18 +63,22 @@ const Navbar = () => {
 
         {/* Sidebar Links */}
         <div className="flex flex-col items-start px-6 space-y-4">
-          <a href="/Traning" className="py-2 text-black hover:text-gray-700">Admission</a>
-          <a href="#" className="py-2 text-gray-700 hover:text-black">Training & Placement</a>
-          <a href="#" className="py-2 text-gray-700 hover:text-black">Approvals</a>
-          <a href="#" className="py-2 text-gray-700 hover:text-black">Gallery</a>
-    
+          <Link href="/Admission" className="py-2 text-gray-700 hover:text-black w-full">Admission</Link>
+          <Link href="/Department" className="py-2 text-gray-700 hover:text-black w-full">Department</Link>
+          <Link href="/Gallery" className="py-2 text-gray-700 hover:text-black w-full">Gallery</Link>
+          <Link href="/Library" className="py-2 text-gray-700 hover:text-black w-full">Library</Link>
+          <Link href="/President_Message" className="py-2 text-gray-700 hover:text-black w-full">President's Message</Link>
+          <Link href="/Principal_Message" className="py-2 text-gray-700 hover:text-black w-full">Principal's Message</Link>
+          <Link href="/Schlorship" className="py-2 text-gray-700 hover:text-black w-full">Scholarship</Link>
+          <Link href="/Administrative_Office" className="py-2 text-gray-700 hover:text-black w-full">Administrative Office</Link>
+          <Link href="/Contact" className="py-2 text-gray-700 hover:text-black w-full">Contact</Link>
         </div>
       </div>
 
-      {/* Overlay when sidebar is open (Adjusted opacity) */}
+      {/* Overlay when sidebar is open */}
       {showSidebar && (
         <div
-          className="fixed top-0 left-0 w-full h-full  bg-opacity-30 transition-opacity duration-300"
+          className="fixed top-0 left-0 w-full h-full bg-opacity-30 transition-opacity duration-300"
           onClick={() => setShowSidebar(false)}
         ></div>
       )}

@@ -12,11 +12,11 @@ export default function Home() {
       {/* About Section */}
       <section className="py-16">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-4xl">
-            <h1 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl mb-8">
+          <div className="max-w-4xl m-auto text-justify">
+            <h1 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl mb-8 text-center">
               About Trinity College of Engineering & Research
             </h1>
-            <p className="text-lg text-gray-600 leading-relaxed">
+            <p className="text-lg text-gray-600 leading-relaxed text-center">
               KJEI's Trinity College of Engineering and Research was established June 2008 at the
               scenic foothills of Bopdev Ghat, Yelewadi, Pisoli, Pune. The College is approved by
               AICTE & DTE, Govt of Maharashtra and is Affiliated to Savitribai Phule Pune

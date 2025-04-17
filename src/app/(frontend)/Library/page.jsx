@@ -6,7 +6,7 @@ export default function PresidentsMessage() {
       {/* Breadcrumb */}
       <nav className="flex mb-8 text-sm">
         <a
-          href="/home"
+          href="/"
           className="text-red-600 hover:text-red-800 transition-colors"
         >
           TCOER

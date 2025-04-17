@@ -142,7 +142,7 @@ export default function EngineeringDepartment() {
           <h2 className="text-3xl font-bold text-center mb-12">Quick Links</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
             <a
-              href="#faculty"
+              href="/Department/FE/Faculty"
               className="flex items-center p-6 bg-white rounded-lg border border-gray-100 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] hover:border-[#9d1c3d] hover:shadow-lg transition-all"
             >
               <div className="p-3 rounded-full mr-4" style={{ backgroundColor: "rgba(157, 28, 61, 0.1)" }}>
